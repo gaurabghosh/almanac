@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Expense Analytics · GG's Almanac</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>" />
+
+<link rel="preconnect" href="https://esm.sh" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+
+<link rel="stylesheet" href="../assets/almanac.css" />
+
+<!-- Tailwind v4 (browser build) + theme config -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --color-ink: var(--ink);
+    --color-ink2: var(--ink-2);
+    --color-muted: var(--muted);
+    --color-surface: var(--surface-1);
+  }
+</style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19",
+    "react-dom": "https://esm.sh/react-dom@19",
+    "react-dom/client": "https://esm.sh/react-dom@19/client",
+    "react/jsx-runtime": "https://esm.sh/react@19/jsx-runtime",
+    "framer-motion": "https://esm.sh/framer-motion@11?external=react,react-dom"
+  }
+}
+</script>
+</head>
+<body class="mesh">
+  <div id="boot"><div class="ring"></div><div>Loading…</div></div>
+  <div id="root" class="relative z-10"></div>
+  <script type="module" src="app.js"></script>
+  <noscript style="display:block;padding:40px;text-align:center">This page needs JavaScript enabled.</noscript>
+</body>
+</html>
