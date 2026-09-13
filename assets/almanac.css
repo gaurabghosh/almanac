@@ -1,0 +1,57 @@
+/* Shared design tokens for every Almanac page. Sections may extend, never override, these. */
+:root {
+  --surface-1: #fcfcfb; --page: #f7f7f5;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #8a8880;
+  --grid: #e6e5df; --baseline: #c3c2b7;
+  --pos: #2a78d6; --neg: #e34948; --neu: #c3c2b7;
+  --seq-100: #cde2fb; --seq-200: #9ec5f4; --seq-300: #6da7ec;
+  --seq-400: #3987e5; --seq-550: #1c5cab; --seq-700: #0d366b;
+  --accent: #2a78d6;
+  --grad: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+}
+html { background: var(--page); }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/* ambient gradient mesh */
+.mesh::before, .mesh::after {
+  content: ""; position: fixed; border-radius: 9999px; pointer-events: none;
+  filter: blur(90px); z-index: 0;
+}
+.mesh::before {
+  width: 45vw; height: 45vw; top: -14vw; left: -10vw;
+  background: radial-gradient(circle, rgba(99,102,241,.20), transparent 70%);
+}
+.mesh::after {
+  width: 42vw; height: 42vw; top: 32vh; right: -12vw;
+  background: radial-gradient(circle, rgba(217,70,239,.14), transparent 70%);
+}
+#boot {
+  position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 14px; color: var(--muted); font-size: 13px;
+}
+#boot .ring {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2.5px solid var(--grid); border-top-color: #6366f1;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.axis-t { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.lbl { fill: var(--ink-2); font-size: 11.5px; }
+.lbl-strong { fill: var(--ink); font-size: 11.5px; font-weight: 600; }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.baseline-s { stroke: var(--baseline); stroke-width: 1; }
+::selection { background: rgba(99,102,241,.22); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-thumb { background: var(--baseline); border-radius: 99px; border: 3px solid var(--page); }
+
+/* Almanac chrome shared by section pages */
+.almanac-crumb {
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+  color: var(--muted); font-size: 12.5px; font-weight: 500; letter-spacing: .01em;
+  transition: color .15s;
+}
+.almanac-crumb:hover { color: var(--ink); }
+.almanac-crumb .dot { width: 6px; height: 6px; border-radius: 99px; background: var(--grad); }
