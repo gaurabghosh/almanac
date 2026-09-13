@@ -48,6 +48,7 @@ const roundRight = (x, y, w, h, r) => {
     r = Math.min(r, h / 2, Math.max(w, 0.01));
     return `M${x},${y} L${x + w - r},${y} Q${x + w},${y} ${x + w},${y + r} L${x + w},${y + h - r} Q${x + w},${y + h} ${x + w - r},${y + h} L${x},${y + h} Z`;
 };
+const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; // local, never UTC
 const kfmt = (v) => (v >= 1000 ? (v / 1000).toFixed(v >= 10000 ? 0 : 1) + "k" : String(Math.round(v)));
 /* ============================== shared UI ============================== */
 const CARD = "rounded-2xl border border-black/[0.06] bg-white/70 backdrop-blur-xl shadow-[0_1px_2px_rgba(16,16,20,.04),0_10px_34px_-12px_rgba(16,16,20,.14)]";
@@ -208,7 +209,7 @@ function useRange(all) {
     const bounds = [all[0].date, all[all.length - 1].date];
     const presets = useMemo(() => {
         const end = bounds[1];
-        const monthsBack = (n) => { const d = new Date(end + "T00:00:00"); d.setMonth(d.getMonth() - n); d.setDate(1); return d.toISOString().slice(0, 10); };
+        const monthsBack = (n) => { const d = new Date(end + "T00:00:00"); d.setDate(1); d.setMonth(d.getMonth() - n); return ymd(d); };
         const yr = end.slice(0, 4);
         return [
             { id: "3m", label: "Last 3 months", from: monthsBack(2) },
@@ -235,8 +236,8 @@ function AnalyticsTab({ data, catOf, range, presets, bounds, onRange, sel, goToT
     const monthsInRange = useMemo(() => {
         const out = [];
         const d = new Date(range.from.slice(0, 7) + "-01T00:00:00");
-        while (d.toISOString().slice(0, 7) <= range.to.slice(0, 7)) {
-            out.push(d.toISOString().slice(0, 7));
+        while (ymd(d).slice(0, 7) <= range.to.slice(0, 7)) {
+            out.push(ymd(d).slice(0, 7));
             d.setMonth(d.getMonth() + 1);
         }
         return out;
