@@ -1,0 +1,591 @@
+{
+ "categories": [
+  {
+   "id": "Food & Dining",
+   "emoji": "🍜",
+   "color": "#eb6834"
+  },
+  {
+   "id": "Groceries",
+   "emoji": "🛒",
+   "color": "#1baf7a"
+  },
+  {
+   "id": "Transport",
+   "emoji": "🚕",
+   "color": "#2a78d6"
+  },
+  {
+   "id": "Travel",
+   "emoji": "✈️",
+   "color": "#7c5cff"
+  },
+  {
+   "id": "Shopping",
+   "emoji": "🛍️",
+   "color": "#e87ba4"
+  },
+  {
+   "id": "Entertainment",
+   "emoji": "🎬",
+   "color": "#eda100"
+  },
+  {
+   "id": "Health & Personal",
+   "emoji": "💊",
+   "color": "#0fa3b1"
+  },
+  {
+   "id": "Bills & Utilities",
+   "emoji": "📱",
+   "color": "#5b6b7c"
+  },
+  {
+   "id": "Home",
+   "emoji": "🏠",
+   "color": "#8a6d3b"
+  },
+  {
+   "id": "Fees & Charges",
+   "emoji": "🏦",
+   "color": "#b03a2e"
+  },
+  {
+   "id": "Other",
+   "emoji": "▫️",
+   "color": "#8a8880"
+  }
+ ],
+ "merchants": [
+  {
+   "match": "^Grab\\s*\\*?\\s*GPC",
+   "merchant": "GrabPay (top-up / other)",
+   "category": "Other"
+  },
+  {
+   "match": "^Grab\\s*\\*?\\s*A-",
+   "merchant": "Grab (Ride)",
+   "category": "Transport"
+  },
+  {
+   "match": "^Grab\\s*\\*?\\s*F-|GRABFOOD",
+   "merchant": "GrabFood",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "^Grab\\s*\\*?\\s*M-|GRABMART",
+   "merchant": "GrabMart",
+   "category": "Groceries"
+  },
+  {
+   "match": "GrabSubscription|Grab\\s*\\*?\\s*U-",
+   "merchant": "GrabUnlimited",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "GRABRIDES|^Grab\\b",
+   "merchant": "Grab (Ride)",
+   "category": "Transport"
+  },
+  {
+   "match": "BUS/MRT",
+   "merchant": "Bus / MRT",
+   "category": "Transport"
+  },
+  {
+   "match": "^Uber",
+   "merchant": "Uber",
+   "category": "Transport"
+  },
+  {
+   "match": "HelloRide|ANYWHEEL",
+   "merchant": "Bike share",
+   "category": "Transport"
+  },
+  {
+   "match": "COMFORTDELGRO|CDG ?TAXI|ZIG",
+   "merchant": "ComfortDelGro Taxi",
+   "category": "Transport"
+  },
+  {
+   "match": "GOJEK",
+   "merchant": "Gojek",
+   "category": "Transport"
+  },
+  {
+   "match": "\\bSHELL\\b|\\bESSO\\b|CALTEX|\\bSPC\\b",
+   "merchant": "Petrol",
+   "category": "Transport"
+  },
+  {
+   "match": "tripcom|TRIP\\.COM",
+   "merchant": "Trip.com",
+   "category": "Travel"
+  },
+  {
+   "match": "Eurail",
+   "merchant": "Eurail",
+   "category": "Travel"
+  },
+  {
+   "match": "AIRBNB",
+   "merchant": "Airbnb",
+   "category": "Travel"
+  },
+  {
+   "match": "OV HOLIDAYS|OVHOLIDAYS",
+   "merchant": "OV Holidays",
+   "category": "Travel"
+  },
+  {
+   "match": "INDIGO|INTERGLOBE",
+   "merchant": "IndiGo",
+   "category": "Travel"
+  },
+  {
+   "match": "RADISSON",
+   "merchant": "Radisson",
+   "category": "Travel"
+  },
+  {
+   "match": "\\bBLS\\b",
+   "merchant": "BLS (Swiss rail)",
+   "category": "Travel"
+  },
+  {
+   "match": "TRAVELOKA",
+   "merchant": "Traveloka",
+   "category": "Travel"
+  },
+  {
+   "match": "MAKEMYTRIP",
+   "merchant": "MakeMyTrip",
+   "category": "Travel"
+  },
+  {
+   "match": "ETIHAD",
+   "merchant": "Etihad Airways",
+   "category": "Travel"
+  },
+  {
+   "match": "SCOOT",
+   "merchant": "Scoot",
+   "category": "Travel"
+  },
+  {
+   "match": "SINGAPORE AIR|SINGAPOREAIR|\\bSIA\\b",
+   "merchant": "Singapore Airlines",
+   "category": "Travel"
+  },
+  {
+   "match": "AIRASIA",
+   "merchant": "AirAsia",
+   "category": "Travel"
+  },
+  {
+   "match": "JETSTAR",
+   "merchant": "Jetstar",
+   "category": "Travel"
+  },
+  {
+   "match": "JETTZY",
+   "merchant": "Jettzy",
+   "category": "Travel"
+  },
+  {
+   "match": "AGODA",
+   "merchant": "Agoda",
+   "category": "Travel"
+  },
+  {
+   "match": "BOOKING\\.COM|HotelatBooking",
+   "merchant": "Booking.com",
+   "category": "Travel"
+  },
+  {
+   "match": "EXPEDIA",
+   "merchant": "Expedia",
+   "category": "Travel"
+  },
+  {
+   "match": "KLOOK",
+   "merchant": "Klook",
+   "category": "Travel"
+  },
+  {
+   "match": "HOTEL|HOSTEL|RESORT|MARRIOTT|HILTON|HYATT|IBIS|NOVOTEL|ACCOR|OYO|HOMESTAY",
+   "merchant": "Hotel",
+   "category": "Travel"
+  },
+  {
+   "match": "TRAVELINSURANCE|TRAVEL INSURANCE",
+   "merchant": "Travel insurance",
+   "category": "Travel"
+  },
+  {
+   "match": "VFS|IMMIGRATION|VISA FEE|EVISA",
+   "merchant": "Visa fees",
+   "category": "Travel"
+  },
+  {
+   "match": "\\bSBB\\b|DB BAHN|DEUTSCHE BAHN|TRENITALIA|SNCF|NS\\.NL|\\bNS\\b|\\bOBB\\b|OeBB|\\bIRCTC\\b|RobbenIsland",
+   "merchant": "Rail (overseas)",
+   "category": "Travel"
+  },
+  {
+   "match": "LOUNGE|CHANGI",
+   "merchant": "Airport",
+   "category": "Travel"
+  },
+  {
+   "match": "7-?\\s?ELEVEN|7ELEVEN",
+   "merchant": "7-Eleven",
+   "category": "Groceries"
+  },
+  {
+   "match": "HILL ?VIEW ?MARKET ?PLACE|HILLVIEWMARKETPLACE|^Hillview\\b",
+   "merchant": "Hillview Market Place",
+   "category": "Groceries"
+  },
+  {
+   "match": "FAIRPRICE|NTUC|FINEST",
+   "merchant": "FairPrice",
+   "category": "Groceries"
+  },
+  {
+   "match": "COLD ?STORAGE|COLDSTORAGE",
+   "merchant": "Cold Storage",
+   "category": "Groceries"
+  },
+  {
+   "match": "GIANT",
+   "merchant": "Giant",
+   "category": "Groceries"
+  },
+  {
+   "match": "SHENG ?SIONG",
+   "merchant": "Sheng Siong",
+   "category": "Groceries"
+  },
+  {
+   "match": "DON ?DON ?DONKI",
+   "merchant": "Don Don Donki",
+   "category": "Groceries"
+  },
+  {
+   "match": "MUSTAFA",
+   "merchant": "Mustafa",
+   "category": "Groceries"
+  },
+  {
+   "match": "REDMART|LAZADA",
+   "merchant": "Lazada / RedMart",
+   "category": "Shopping"
+  },
+  {
+   "match": "SUPERMARKET|SUPERMART|MINIMART|MINI MART|PROVISION|CHEERS",
+   "merchant": "Minimart",
+   "category": "Groceries"
+  },
+  {
+   "match": "WOOLWORTHS|TESCO|SAINSBURY|LIDL|ALDI|COOP|MIGROS|CARREFOUR|ALBERT HEIJN|\\bAH\\b|REWE|EDEKA|SPAR\\b",
+   "merchant": "Supermarket (overseas)",
+   "category": "Groceries"
+  },
+  {
+   "match": "GOLDEN VILLAGE|^GV|CATHAY|SHAW|CINEMA",
+   "merchant": "Cinema",
+   "category": "Entertainment"
+  },
+  {
+   "match": "DELIVEROO",
+   "merchant": "Deliveroo",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "FOODPANDA",
+   "merchant": "foodpanda",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "KOPITIAM",
+   "merchant": "Kopitiam",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "STARBUCKS",
+   "merchant": "Starbucks",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "MCDONALD",
+   "merchant": "McDonald's",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "BURGER KING|BURGERKING",
+   "merchant": "Burger King",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "KFC",
+   "merchant": "KFC",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "SUBWAY",
+   "merchant": "Subway",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "HAIDILAO",
+   "merchant": "Haidilao",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "CEDELE",
+   "merchant": "Cedele",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "PEPPER ?LUNCH",
+   "merchant": "Pepper Lunch",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "PARADISE",
+   "merchant": "Paradise Group",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "TANDOORI|BRIYANI|BIRYANI|INDIAN ?WOK|ANDHRA|CHEFS|DOSA|MASALA|CURRY|SARAVANA|KOMALA|MURTABAK|PRATA|THALI",
+   "merchant": "Indian restaurant",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "SUSHI|RAMEN|YAKINIKU|IZAKAYA|TEPPAN|DONBURI|UDON|SOBA|TONKATSU|SURU|GENKI|ICHIRAN",
+   "merchant": "Japanese restaurant",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "HOTPOT|MALATANG|\\bMALA\\b|DIMSUM|DIM SUM|CANTON|SZECHUAN|TAIWAN|BUBBLE|LIHO|\\bKOI\\b|GONGCHA|CHICHA|PLAYMADE",
+   "merchant": "Asian eatery",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "COFFEE|CAFE|CAFÉ|KOPI|TOAST|YA KUN|YAKUN|TOASTBOX|FLASH|BREAD|BAKERY|BAKE|DONUT|CROISSANT|PATISSERIE",
+   "merchant": "Cafe",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "RESTAURANT|RESTO|BISTRO|GRILL|KITCHEN|EATERY|DINER|EATING|FOOD|HAWKER|CANTEEN|NOODLE|CHICKEN|RICE|SEAFOOD|STEAK|PIZZA|BURGER|TACO|KEBAB|SHAWARMA|\\bBAR\\b|PUB\\b|BREW|WINE|BEER",
+   "merchant": "Restaurant",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "OLDCHANGKEE|OLD CHANG KEE|MR BEAN|POLAR|BENGAWAN|PRIME|FUNRICE|SANOOK|JIAK|KOMA|JUMBO|CRYSTAL JADE|DIN TAI FUNG|TIMHOWAN|TIM HO WAN|SWENSEN|PASTAMANIA|SAIZERIYA|GENKI|GREENDOT|STUFFD|SALAD|GUZMAN|SHAKE SHACK|FIVE GUYS|WENDY|POPEYES|TEXAS|JOLLIBEE|MOS BURGER|LONG JOHN|DUNKIN|KRISPY|BASKIN|MUSEUM OF ICE|GELATO|ICE CREAM|CHATERAISE|PARIS BAGUETTE|PANDA|NANYANG|VENDING|APACVENDING",
+   "merchant": "Food (misc)",
+   "category": "Food & Dining"
+  },
+  {
+   "match": "GUARDIAN",
+   "merchant": "Guardian Pharmacy",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "WATSONS",
+   "merchant": "Watsons",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "\\bUNITY\\b|PHARMAC|CLINIC|MEDICAL|DENTAL|DENTIST|HOSPITAL\\b|POLYCLINIC|RAFFLES MED|HEALTHWAY|OPTICAL|OWNDAYS|SPECS",
+   "merchant": "Healthcare",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "HAIR|SALON|BARBER|SPA\\b|MASSAGE|NAIL",
+   "merchant": "Salon / Grooming",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "GYM|FITNESS|ANYTIME|CLASSPASS|YOGA|PILATES|RUN\\b|MARATHON|SPORTS HUB|ACTIVESG",
+   "merchant": "Fitness",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "DECATHLON",
+   "merchant": "Decathlon",
+   "category": "Shopping"
+  },
+  {
+   "match": "NETFLIX",
+   "merchant": "Netflix",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "SPOTIFY",
+   "merchant": "Spotify",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "YOUTUBE|GOOGLE ?\\*?\\s?YOUTUBE",
+   "merchant": "YouTube Premium",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "APPLE\\.COM|APPLE ?SERVICES|ITUNES",
+   "merchant": "Apple",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "GOOGLE|OPENAI|CHATGPT|ANTHROPIC|CLAUDE|CURSOR|GITHUB|NOTION|MOTHERDUCK|CHESS\\.COM|KINDLE|AUDIBLE|MEDIUM|SUBSTACK",
+   "merchant": "Software / subscriptions",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "SINGTEL|STARHUB|M1\\b|SIMBA|GIGA|CIRCLES",
+   "merchant": "Telco",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "SP ?SERVICES|SP GROUP|GENECO|TUAS POWER|KEPPEL ELEC|SENOKO|UNION POWER",
+   "merchant": "Utilities",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "AXS ?PAYMENT|AXS\\b",
+   "merchant": "AXS payment",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "SINGAPORE GOVT|\\bGOVT\\b|GOV\\.SG|\\bICA\\b|\\bMOM\\b|\\bIRAS\\b|\\bLTA\\b|\\bHDB\\b|\\bURA\\b|SINGPASS",
+   "merchant": "Government",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "POLICYBAZAAR|INSURANCE|PRUDENTIAL|AIA\\b|GREAT EASTERN|NTUC INCOME|FWD\\b|SINGLIFE|MANULIFE",
+   "merchant": "Insurance",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "MARINA BAY SANDS|MBS\\b|USS\\b|UNIVERSAL STUDIOS|ZOO|BIRD PARADISE|GARDENS BY|MUSEUM|ARTSCIENCE|SISTIC|TICKETMASTER|EVENTBRITE|CONCERT|BOWLING|KARAOKE|KTV|ESCAPE|ARCADE|TIMEZONE|STEAM|PLAYSTATION|NINTENDO|XBOX",
+   "merchant": "Entertainment / Attractions",
+   "category": "Entertainment"
+  },
+  {
+   "match": "SWAROVSKI|JEWELLER|JEWELRY|PANDORA|TIFFANY|PRECIOUS TREASURE|GOLDHEART|LEE HWA",
+   "merchant": "Jewellery",
+   "category": "Shopping"
+  },
+  {
+   "match": "PUMA|NIKE|ADIDAS|UNIQLO|H&M|ZARA|COTTON ON|GIORDANO|CALVIN ?KLEIN|LEVI|MANGO|MUJI|CHARLES ?&|PEDRO|BATA|SKECHERS|NEW BALANCE|LULULEMON|CLOTH|APPAREL|FASHION|BOUTIQUE|OUTLET",
+   "merchant": "Clothing",
+   "category": "Shopping"
+  },
+  {
+   "match": "AMAZON|SHOPEE|TAOBAO|ALIEXPRESS|EBAY|QOO10|CAROUSELL|EZBUY",
+   "merchant": "Online shopping",
+   "category": "Shopping"
+  },
+  {
+   "match": "APPLE STORE|CHALLENGER|COURTS|HARVEY NORMAN|BEST DENKI|GAIN CITY|SLR ?REVOLUTION|CAMERA|SAMSUNG|DYSON|XIAOMI|SONY|POPULAR ?BOOK|KINOKUNIYA|TIMES BOOK|BOOKS",
+   "merchant": "Electronics & Books",
+   "category": "Shopping"
+  },
+  {
+   "match": "IKEA|NITORI|HOMEFIX|DAISO|MINISO|TYPO|SPOTLIGHT|HOME ?FURN|FURNITURE|CASTLERY|HIPVAN|FORTYTWO|MATTRESS|BEDDING|TAOBAO|HOUSE OF|LIGHTING|SELFFIX|HARDWARE|PLUMB|AIRCON|CLEANING|LAUNDRY|DRY CLEAN|MOVERS|MOVING",
+   "merchant": "Home & furnishing",
+   "category": "Home"
+  },
+  {
+   "match": "\\bRENT\\b|LANDLORD|PROPERTY|AGENT|CONDO|MCST|MANAGEMENT CORP",
+   "merchant": "Housing",
+   "category": "Home"
+  },
+  {
+   "match": "ANNUAL MEMBERSHIP FEE|ANNUAL FEE",
+   "merchant": "Card annual fee",
+   "category": "Fees & Charges"
+  },
+  {
+   "match": "CCY ?CONVERSION ?FEE|CONVERSION FEE|FOREIGN TRANSACTION FEE|ADMIN FEE|LATE CHARGE|INTEREST CHARGE|FINANCE CHARGE|MILES TRANSFER|\\bGST\\b",
+   "merchant": "Bank fees",
+   "category": "Fees & Charges"
+  },
+  {
+   "match": "ZERODHA|RAZ\\*Zerodha|BROKER|TRADING|INVEST",
+   "merchant": "Investing",
+   "category": "Fees & Charges"
+  },
+  {
+   "match": "TRANSFER|REMIT|WISE\\b|REVOLUT|YOUTRIP|INSTAREM|PAYNOW|PAYPAL",
+   "merchant": "Transfers & remittance",
+   "category": "Fees & Charges"
+  },
+  {
+   "match": "trip ?com|tripcom",
+   "merchant": "Trip.com",
+   "category": "Travel"
+  },
+  {
+   "match": "GetYourGuide|Big Bus|BIG BUS|Klook|VIATOR|TOUR|SAFARI|HELICOPTER|CRUISE|FERRY|HYDROFOIL|TURBO JET|Pilatus|Titlis|TRAMWAY|PEAK TRAM|GATEWAY|BOTANICAL|HERITAGE|Schliessfach|CITYLOCKER|LOCKER|kkiosk|eDreams|AIR-?INDI|AIR INDIA|EMIRATES|QATAR|LUFTHANSA|KLM\\b|SWISS\\b|BRITISH AIR|CATHAY PAC|VIETJET|MALAYSIA AIR|BATIK|CAUSEWAYLINK|LOCA TAXI|DB Automat|Bahnen|Bahn\\b",
+   "merchant": "Tours & transit (abroad)",
+   "category": "Travel"
+  },
+  {
+   "match": "SumUp|Kaiser Max|Appart|LE MERIDIEN|SHANGRI|MANDARIN ORIENTAL|PARKROYAL|Leela|TAJ\\b|SWOSTI|TOSHALI|SHEPHERD|GAME LODGE|ATOLL|The Boma|MARINA AT",
+   "merchant": "Hotels & stays",
+   "category": "Travel"
+  },
+  {
+   "match": "LOTTE DUTY FREE|DUTY FREE|Globalblue|Cettire|LOVE & CO|SEPHORA|Tretter|Schuhe|Laederach|COCOA TREES|CHOCOLATE|Confiserie|SARIGAMA|FIFTHSEASON|IORA|CASA VOSTRA|WAREHOUSE|Lenskart|LONGLIFE STATIONERY|PRECIOUS THOUGHTS|BLOSSOM|FLORAL|PETALS|GIFT|MUMBAI TRAVEL RETAIL|Microsoft\\*Store|APPEST|KPAY|PTO COMMERCIAL|DAZZLING|ORANGEWOODS|BEAUTY LANGUAGE|Photostudio",
+   "merchant": "Retail",
+   "category": "Shopping"
+  },
+  {
+   "match": "FACEBK|fb\\.me|MILAAP|GIRL SCOUTS|DONAT|GIVING|CHARITY",
+   "merchant": "Ads / donations",
+   "category": "Other"
+  },
+  {
+   "match": "WREN AI|JULIUS AI|PALADIN APP|OPENAI|ANTHROPIC|Microsoft",
+   "merchant": "Software / subscriptions",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "ETICKETS|Harry Potter|Mandai|SENTOSA|DISNEYLAND|Disney|GAURAV KAPOOR|EB \\*|BIGTREE|bookmysho|PVR|INOX|STAR THEATRE|THEATRE|KFI-ARENA|FUNCLAW|AMUSEMENT|Ultron Sports|CHESS\\.SG|DISCOVER SINGAPORE|JURASSIC|CONCESSIONS|Netone|JJ TELECOM",
+   "merchant": "Entertainment / Attractions",
+   "category": "Entertainment"
+  },
+  {
+   "match": "ETHIOPIA|SINGAPOR\\d{10,}",
+   "merchant": "Airline",
+   "category": "Travel"
+  },
+  {
+   "match": "YUGO|EG MANAGEMENT|BROTHERIDGE|DABULA|Mukuni|NATIONAL HERITAGE|CONCOR|Murray|ZAMBEZI|CAP D ABONDANCE|JAS AND ARU",
+   "merchant": "Tours & transit (abroad)",
+   "category": "Travel"
+  },
+  {
+   "match": "APOLLO PHARMAC|ZERO HEALTHCARE|PINKY WINKY",
+   "merchant": "Healthcare",
+   "category": "Health & Personal"
+  },
+  {
+   "match": "PROPTECH|PROVENANCE LAND|JANCOR",
+   "merchant": "Housing",
+   "category": "Home"
+  },
+  {
+   "match": "Policy Bazaar",
+   "merchant": "Insurance",
+   "category": "Bills & Utilities"
+  },
+  {
+   "match": "CHIL CHIL|MAXWELL RESERVE|XING YUE XUAN|Berkeley garden|MAISON BOULUD|BEAUTY IN THE POT|HAI DI LAO|PAPARAZZI|BITP|CITY HOT POT|JIU FU|TS/T|SANKRANTI|ZOLI MAMZEL|ROYAL CHINA|H flinger|MANDA DE LAOS|PMG HV|MANBOK|Naema|OPPA81|Pink Apple|HAPPY BOWL|GOLDMOON|VINOTINTO|SEOUL GARDEN|CHICKITA|A-ONE|P\\.MATHIEU|CASA MAQUISTA|KAIJOU|DESERT DESSERT|B ckerei|BAECKER|JACK S PLACE|CHEZ RUBEN|SUKI-YA|VISTA1|JELLYHEARTS|KEUM EUN DON|OSTERIA|MAMMA MIA|Kings Banana|INORI|GREEN ON EARTH|ANJAPPAR|CHICK-FIL-A|SUPERFINE|MUSTARD|WHISK|MAHESH LUNCH|HOOGA|RW SELMOR|Giannino|A l ombre|KOLKATA BECKONS|HIGH HOUSE|RANGOOLI|NANDOS|BA DAO GUAN|TEH TARIK|NALAN|andes|ANDES|astons|HAINAN|OCEAN BASKET|YANG GUO FU|PAUL CAPETOWN|GROOT CONSTANTIA|DOMINO|TIM HORTONS|YEW KOK ANN|Selecta|ToGoKaffee|Gordon|HARRY'S|HARRYS|KOUFU|SMP_|SMP |KMZ|AREAS ROISSY|NASTY COOKIE|CBTL|CARL'S|KAILASH|ROLLIE|MENG MIN|ROLLGAADI|CONCENTRO|WOK HEY|SARAWAK|PundB|GYG|MCD |ASIA SEVEN|K COMFORT|FJ |IPPUDO|CANTINE|NIKU|Copper Chimney|NS_FB|MX-|IJOOZ|NOSH|MING ANG|TEA JUNCTION|JOY LUCK|ANTS FACTORY|Kirchberg|Alpengast",
+   "merchant": "Restaurant",
+   "category": "Food & Dining"
+  }
+ ]
+}
