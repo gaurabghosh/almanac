@@ -1,16 +1,19 @@
-/* Encrypts data.plain.json -> data.enc.json with AES-256-GCM.
-   Usage: node scripts/encrypt.js <passphrase>
-   (data.plain.json is git-ignored; only the ciphertext is published.) */
+/* Encrypts <section>/data.plain.json -> <section>/data.enc.json with AES-256-GCM.
+   Usage: node encrypt.js <section> <passphrase>      e.g. node encrypt.js life "my passcode"
+   (data.plain.json files are git-ignored; only the ciphertext is published.)
+   Each section has its own passcode — they need not match. */
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
-const pass = process.argv[2];
-if (!pass) { console.error("usage: node scripts/encrypt.js <passphrase>"); process.exit(1); }
+const [section, pass] = process.argv.slice(2);
+if (!section || !pass) { console.error("usage: node encrypt.js <section> <passphrase>"); process.exit(1); }
 
 const ITER = 310000;
-const root = __dirname;
-const plain = fs.readFileSync(path.join(root, "data.plain.json"));
+const dir = path.join(__dirname, section);
+const src = path.join(dir, "data.plain.json");
+if (!fs.existsSync(src)) { console.error(`no ${src}`); process.exit(1); }
+const plain = fs.readFileSync(src);
 JSON.parse(plain); // validate
 
 const salt = crypto.randomBytes(16);
@@ -28,5 +31,5 @@ const payload = {
   iv: iv.toString("base64"),
   ciphertext: ct.toString("base64"),
 };
-fs.writeFileSync(path.join(root, "data.enc.json"), JSON.stringify(payload));
-console.log("wrote data.enc.json (" + ct.length + " bytes ciphertext)");
+fs.writeFileSync(path.join(dir, "data.enc.json"), JSON.stringify(payload));
+console.log(`wrote ${section}/data.enc.json (${ct.length} bytes ciphertext)`);

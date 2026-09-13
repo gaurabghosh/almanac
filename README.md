@@ -1,36 +1,63 @@
-# ✍️ Homework for Life
+# 📖 GG's Almanac
 
-A private journal site built from a Notion "Story" database — one storyworthy moment per day.
+A private, static site of journals and personal analytics. One hub, one folder per section.
 
-**Live:** https://gaurabghosh.github.io/homework-for-life/
+**Live:** https://gaurabghosh.github.io/almanac/
 
-- **Raw Data** — every entry, grouped by month, searchable
-- **Monthly Summary** — themed, bulleted recaps with a month picker
-- **Analytics** — date-range zoom, sentiment over time, theme mix, topics and streaks
+| Section | Folder | Status | Source |
+|---|---|---|---|
+| Personal Journal — *Homework for Life* | `life/` | live | Notion "Story" database, refreshed weekly |
+| Expense Analytics | `expenses/` | live | Citi credit-card statement PDFs, monthly |
+| Work Journal | `work/` | coming soon | — |
+| Travel Journal | `travel/` | coming soon | — |
+
+## Layout
+
+```
+index.html        hub — renders cards from sections.js
+sections.js       section registry (title, emoji, blurb, status, href)
+assets/           shared design tokens (almanac.css)
+encrypt.js        node encrypt.js <section> <passcode>
+life/             React app + data.enc.json
+expenses/         React app + data.enc.json + scripts/ (PDF parser, category rules)
+work/ travel/     placeholder pages
+```
+
+### Adding a section
+
+1. Create `<name>/index.html` (copy `work/index.html` for a placeholder, or `expenses/` for a full encrypted app).
+2. Add an entry to `sections.js`. Status `live` makes the card clickable; anything else renders it as a placeholder.
+3. If it has data: keep `<name>/data.plain.json` git-ignored and publish only `data.enc.json` via `node encrypt.js <name> <passcode>`.
 
 ## Stack
 
-React 19 + Framer Motion + Tailwind CSS v4, loaded as ES modules from a CDN — no bundler
-and no install step. `app.js` is compiled from `app.jsx` (JSX → ESM) and committed directly.
-
-To rebuild after editing the source:
+React 19 + Framer Motion + Tailwind CSS v4 loaded as ES modules from a CDN — no bundler, no install step.
+Each section's `app.js` is compiled from its `app.jsx` and committed:
 
 ```bash
-tsc --allowJs --jsx react-jsx --target es2022 --module es2022 \
-    --moduleResolution bundler --outDir . app.jsx
+cd expenses   # or life
+tsc --allowJs --jsx react-jsx --target es2022 --module es2022 --moduleResolution bundler --outDir . app.jsx
 ```
 
 ## Privacy
 
-Entries are **not** stored in this repo in plaintext. `data.enc.json` is encrypted with
-AES-256-GCM (key derived from the passcode via PBKDF2-SHA256, 310k iterations). Decryption
-happens entirely in the browser and the passcode is never persisted — every page load asks
-for it again.
+Nothing personal is stored in this repo in plaintext. Each section's `data.enc.json` is AES-256-GCM
+(key from the passcode via PBKDF2-SHA256, 310k iterations). Decryption happens in the browser; the
+passcode is never persisted and every page load asks again. Sections have independent passcodes.
 
-## Updating the data
+## Updating data
 
-1. Edit `data.plain.json` locally (it is git-ignored and never committed)
-2. `node encrypt.js "<passcode>"`
-3. Commit the regenerated `data.enc.json` and push — the site updates a minute later
+### Personal Journal
+1. Edit `life/data.plain.json` (git-ignored)
+2. `node encrypt.js life "<passcode>"`
+3. Commit `life/data.enc.json`, push
 
-A scheduled task refreshes this weekly from Notion.
+### Expense Analytics
+1. Drop the month's statement PDF into the `Finances/Spending/credit_card_statements` Drive folder (or any local folder)
+2. `python3 expenses/scripts/parse_statements.py <folder-with-pdfs>` — needs `pdftotext` (poppler). Writes
+   `expenses/data.plain.json`, prints category totals and anything left uncategorised. Every statement is
+   reconciled against its printed transaction sub-total (net of refunds); card numbers, addresses and balances
+   are never extracted.
+3. Tweak `expenses/scripts/rules.json` for new merchants (ordered regex → merchant, category; first match wins) and re-run
+4. `node encrypt.js expenses "<passcode>"`
+5. Commit `expenses/data.enc.json`, push
