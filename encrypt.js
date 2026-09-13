@@ -9,7 +9,7 @@ const pass = process.argv[2];
 if (!pass) { console.error("usage: node scripts/encrypt.js <passphrase>"); process.exit(1); }
 
 const ITER = 310000;
-const root = path.join(__dirname, "..");
+const root = __dirname;
 const plain = fs.readFileSync(path.join(root, "data.plain.json"));
 JSON.parse(plain); // validate
 
